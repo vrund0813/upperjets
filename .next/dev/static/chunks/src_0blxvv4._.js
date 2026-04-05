@@ -5053,8 +5053,9 @@ const FLEET = [
         category: 'Mid-size jet',
         tag: 'Mid-size',
         photos: [
-            '/images/UpperJets-16.jpg',
-            '/images/UpperJets-02.jpg'
+            '/images/L601.jpg',
+            '/images/L602.jpg',
+            '/images/L603.jpg'
         ],
         photoPosition: 'center 28%',
         specs: [
@@ -5090,10 +5091,11 @@ const FLEET = [
         category: 'Super mid-size jet',
         tag: 'Super mid-size',
         photos: [
-            '/images/UpperJets-02.jpg',
-            '/images/UpperJets-16.jpg'
+            '/images/Falcon501.jpg',
+            '/images/Falcon502.JPG',
+            '/images/Falcon503.JPEG'
         ],
-        photoPosition: 'center 25%',
+        photoPosition: '70% 25%',
         specs: [
             {
                 label: 'Passengers',
@@ -5127,10 +5129,11 @@ const FLEET = [
         category: 'Heavy jet',
         tag: 'Heavy',
         photos: [
-            '/images/UpperJets-16.jpg',
-            '/images/UpperJets-02.jpg'
+            '/images/Falcon9001.jpg',
+            '/images/Falcon9002.jpg',
+            '/images/Falcon9003.jpg'
         ],
-        photoPosition: 'center',
+        photoPosition: '80% center',
         specs: [
             {
                 label: 'Passengers',
@@ -5195,7 +5198,7 @@ function scrollToSection(id) {
         behavior: 'smooth'
     });
 }
-/* ─────────────────────────────── FleetCard ─── */ function FleetCard({ aircraft, onCharter }) {
+/* ─────────────────────────────── FleetCard ─── */ function FleetCard({ aircraft, onView }) {
     _s();
     const [idx, setIdx] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [fading, setFading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -5224,9 +5227,9 @@ function scrollToSection(id) {
                             nextIdxRef.current = (nextIdxRef.current + 1) % aircraft.photos.length;
                             setFading(false);
                         }
-                    }["FleetCard.useCallback[handleMouseEnter]"], 300);
+                    }["FleetCard.useCallback[handleMouseEnter]"], 180);
                 }
-            }["FleetCard.useCallback[handleMouseEnter]"], 2400);
+            }["FleetCard.useCallback[handleMouseEnter]"], 1200);
         }
     }["FleetCard.useCallback[handleMouseEnter]"], [
         aircraft.photos.length
@@ -5352,7 +5355,7 @@ function scrollToSection(id) {
                             transition: 'opacity 250ms cubic-bezier(0.16,1,0.3,1)'
                         },
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: onCharter,
+                            onClick: onView,
                             style: {
                                 fontFamily: 'var(--font-inter)',
                                 fontSize: '12px',
@@ -5366,7 +5369,7 @@ function scrollToSection(id) {
                                 borderRadius: '2px',
                                 transition: 'border-color 200ms, color 200ms'
                             },
-                            children: "Charter This →"
+                            children: "View →"
                         }, void 0, false, {
                             fileName: "[project]/src/components/sections/Fleet.tsx",
                             lineNumber: 156,
@@ -5466,9 +5469,9 @@ function scrollToSection(id) {
 }
 _s(FleetCard, "ERZBKanvwUZAripeUUfFR705kt0=");
 _c = FleetCard;
-/* ─────────────────────────────── FleetModal ─── */ function FleetModal({ onClose }) {
+/* ─────────────────────────────── FleetModal ─── */ function FleetModal({ onClose, initialTab = 0 }) {
     _s1();
-    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialTab);
     const [photoIdx, setPhotoIdx] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [photoFading, setPhotoFading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const photoIntervalRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -5495,9 +5498,9 @@ _c = FleetCard;
                             nextPhotoRef.current = (nextPhotoRef.current + 1) % aircraft.photos.length;
                             setPhotoFading(false);
                         }
-                    }["FleetModal.useCallback[handlePhotoEnter]"], 300);
+                    }["FleetModal.useCallback[handlePhotoEnter]"], 180);
                 }
-            }["FleetModal.useCallback[handlePhotoEnter]"], 2400);
+            }["FleetModal.useCallback[handlePhotoEnter]"], 1200);
         }
     }["FleetModal.useCallback[handlePhotoEnter]"], [
         aircraft.photos.length
@@ -5889,11 +5892,11 @@ _c = FleetCard;
         columnNumber: 5
     }, this);
 }
-_s1(FleetModal, "4tq8HUTPWbitgK+8Z4t7IbHdOGI=");
+_s1(FleetModal, "y0HH4Z5lhKVPT79WL2C3s2niEvs=");
 _c1 = FleetModal;
 function Fleet() {
     _s2();
-    const [modalOpen, setModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [modalTab, setModalTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const { fleet } = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$content$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CONTENT"];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
@@ -5978,7 +5981,7 @@ function Fleet() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                         variant: "outline",
-                                        onClick: ()=>setModalOpen(true),
+                                        onClick: ()=>setModalTab(0),
                                         children: [
                                             fleet.viewAll,
                                             " →"
@@ -6001,9 +6004,9 @@ function Fleet() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "fleet-grid",
-                            children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$fleet$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FLEET"].map((aircraft)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FleetCard, {
+                            children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$fleet$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FLEET"].map((aircraft, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FleetCard, {
                                     aircraft: aircraft,
-                                    onCharter: ()=>scrollToSection('contact')
+                                    onView: ()=>setModalTab(i)
                                 }, aircraft.name, false, {
                                     fileName: "[project]/src/components/sections/Fleet.tsx",
                                     lineNumber: 615,
@@ -6025,17 +6028,18 @@ function Fleet() {
                 lineNumber: 557,
                 columnNumber: 7
             }, this),
-            modalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FleetModal, {
-                onClose: ()=>setModalOpen(false)
+            modalTab !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FleetModal, {
+                onClose: ()=>setModalTab(null),
+                initialTab: modalTab
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/Fleet.tsx",
                 lineNumber: 625,
-                columnNumber: 21
+                columnNumber: 29
             }, this)
         ]
     }, void 0, true);
 }
-_s2(Fleet, "CMfkJY0oHKX43wkRh7WkxSiVV1E=");
+_s2(Fleet, "NmhjnntovLJn+D3pjfaFscpyZBs=");
 _c2 = Fleet;
 var _c, _c1, _c2;
 __turbopack_context__.k.register(_c, "FleetCard");

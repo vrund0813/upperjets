@@ -16,10 +16,10 @@ function scrollToSection(id: string) {
 /* ─────────────────────────────── FleetCard ─── */
 function FleetCard({
   aircraft,
-  onCharter,
+  onView,
 }: {
   aircraft: FleetAircraft
-  onCharter: () => void
+  onView: () => void
 }) {
   const [idx, setIdx] = useState(0)
   const [fading, setFading] = useState(false)
@@ -45,8 +45,8 @@ function FleetCard({
         nextIdxRef.current =
           (nextIdxRef.current + 1) % aircraft.photos.length
         setFading(false)
-      }, 300)
-    }, 2400)
+      }, 180)
+    }, 1200)
   }, [aircraft.photos.length])
 
   const handleMouseLeave = useCallback(() => {
@@ -140,7 +140,7 @@ function FleetCard({
           </div>
         )}
 
-        {/* Charter This overlay */}
+        {/* View overlay */}
         <div
           style={{
             position: 'absolute',
@@ -154,7 +154,7 @@ function FleetCard({
           }}
         >
           <button
-            onClick={onCharter}
+            onClick={onView}
             style={{
               fontFamily: 'var(--font-inter)',
               fontSize: '12px',
@@ -169,7 +169,7 @@ function FleetCard({
               transition: 'border-color 200ms, color 200ms',
             }}
           >
-            Charter This →
+            View →
           </button>
         </div>
       </div>
@@ -229,8 +229,8 @@ function FleetCard({
 }
 
 /* ─────────────────────────────── FleetModal ─── */
-function FleetModal({ onClose }: { onClose: () => void }) {
-  const [activeTab, setActiveTab] = useState(0)
+function FleetModal({ onClose, initialTab = 0 }: { onClose: () => void; initialTab?: number }) {
+  const [activeTab, setActiveTab] = useState(initialTab)
   const [photoIdx, setPhotoIdx] = useState(0)
   const [photoFading, setPhotoFading] = useState(false)
   const photoIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
@@ -253,8 +253,8 @@ function FleetModal({ onClose }: { onClose: () => void }) {
         setPhotoIdx(nextPhotoRef.current)
         nextPhotoRef.current = (nextPhotoRef.current + 1) % aircraft.photos.length
         setPhotoFading(false)
-      }, 300)
-    }, 2400)
+      }, 180)
+    }, 1200)
   }, [aircraft.photos.length])
 
   const handlePhotoLeave = useCallback(() => {
@@ -549,7 +549,7 @@ function FleetModal({ onClose }: { onClose: () => void }) {
 
 /* ─────────────────────────────── Fleet Section ─── */
 export function Fleet() {
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalTab, setModalTab] = useState<number | null>(null)
   const { fleet } = CONTENT
 
   return (
@@ -603,7 +603,7 @@ export function Fleet() {
                 </h2>
               </div>
 
-              <Button variant="outline" onClick={() => setModalOpen(true)}>
+              <Button variant="outline" onClick={() => setModalTab(0)}>
                 {fleet.viewAll} →
               </Button>
             </div>
@@ -611,18 +611,18 @@ export function Fleet() {
 
           {/* Fleet cards: 1.5fr 1fr 1fr */}
           <div className="fleet-grid">
-            {FLEET.map(aircraft => (
+            {FLEET.map((aircraft, i) => (
               <FleetCard
                 key={aircraft.name}
                 aircraft={aircraft}
-                onCharter={() => scrollToSection('contact')}
+                onView={() => setModalTab(i)}
               />
             ))}
           </div>
         </div>
       </section>
 
-      {modalOpen && <FleetModal onClose={() => setModalOpen(false)} />}
+      {modalTab !== null && <FleetModal onClose={() => setModalTab(null)} initialTab={modalTab} />}
     </>
   )
 }

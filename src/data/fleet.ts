@@ -18,7 +18,7 @@ export const FLEET: FleetAircraft[] = [
     name: 'Learjet 60',
     category: 'Mid-size jet',
     tag: 'Mid-size',
-    photos: ['/images/UpperJets-16.jpg', '/images/UpperJets-02.jpg'],
+    photos: ['/images/L601.jpg', '/images/L602.jpg', '/images/L603.jpg'],
     photoPosition: 'center 28%',
     specs: [
       { label: 'Passengers', value: 'Up to 8' },
@@ -35,8 +35,8 @@ export const FLEET: FleetAircraft[] = [
     name: 'Falcon 50',
     category: 'Super mid-size jet',
     tag: 'Super mid-size',
-    photos: ['/images/UpperJets-02.jpg', '/images/UpperJets-16.jpg'],
-    photoPosition: 'center 25%',
+    photos: ['/images/Falcon501.jpg', '/images/Falcon502.JPG', '/images/Falcon503.JPEG'],
+    photoPosition: '70% 25%',
     specs: [
       { label: 'Passengers', value: 'Up to 9' },
       { label: 'Range', value: '3,000 nm' },
@@ -52,8 +52,8 @@ export const FLEET: FleetAircraft[] = [
     name: 'Falcon 900',
     category: 'Heavy jet',
     tag: 'Heavy',
-    photos: ['/images/UpperJets-16.jpg', '/images/UpperJets-02.jpg'],
-    photoPosition: 'center',
+    photos: ['/images/Falcon9001.jpg', '/images/Falcon9002.jpg', '/images/Falcon9003.jpg'],
+    photoPosition: '80% center',
     specs: [
       { label: 'Passengers', value: 'Up to 14' },
       { label: 'Range', value: '4,500 nm' },
