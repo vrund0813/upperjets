@@ -17,7 +17,14 @@ export function Hero() {
   const zoneRef = useRef<HTMLDivElement>(null)
   const progress = useScrollProgress(zoneRef as React.RefObject<HTMLElement | null>)
 
-  const bridge = Math.sin(Math.min(progress / 0.4, 1) * Math.PI) * 0.9
+  // Dark bridge: ramp up 0.20→0.35, hold dark 0.35→0.55, ramp down 0.55→0.70
+  // Stays dark through the entire exterior→interior crossfade (0.30→0.65)
+  const bridge =
+    progress < 0.20 ? 0 :
+    progress < 0.35 ? ((progress - 0.20) / 0.15) * 0.9 :
+    progress < 0.55 ? 0.9 :
+    progress < 0.70 ? (1 - (progress - 0.55) / 0.15) * 0.9 :
+    0
   const extText = Math.max(0, 1 - progress * 5)
   const compassOp = Math.max(0, 1 - progress * 8)
   const aboutOp = progress > 0.58 ? Math.min(1, (progress - 0.58) * 6) : 0
@@ -33,7 +40,7 @@ export function Hero() {
   }, [])
 
   return (
-    <div ref={zoneRef} style={{ height: '400vh', position: 'relative' }}>
+    <div ref={zoneRef} style={{ height: '280vh', position: 'relative' }}>
       <div
         style={{
           position: 'sticky',

@@ -1,40 +1,10 @@
-{"timestamp":"00:00:00.633","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:06.299","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:03:50.529","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:05:05.168","source":"Server","level":"LOG","message":"✓ Compiled in 55ms"}
-{"timestamp":"00:05:05.429","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: onCharter is not defined"}
-{"timestamp":"00:05:13.910","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
-{"timestamp":"00:05:13.962","source":"Server","level":"LOG","message":"✓ Compiled in 22ms"}
-{"timestamp":"00:05:14.073","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:05:22.448","source":"Server","level":"LOG","message":"✓ Compiled in 17ms"}
-{"timestamp":"00:05:28.134","source":"Server","level":"LOG","message":"✓ Compiled in 22ms"}
-{"timestamp":"00:05:28.430","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: modalOpen is not defined"}
-{"timestamp":"00:05:33.452","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
-{"timestamp":"00:05:33.505","source":"Server","level":"ERROR","message":"⨯ ReferenceError: modalOpen is not defined"}
-{"timestamp":"00:05:33.513","source":"Server","level":"LOG","message":"✓ Compiled in 12ms"}
-{"timestamp":"00:05:33.565","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:05:34.434","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: modalOpen is not defined"}
-{"timestamp":"00:05:39.160","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
-{"timestamp":"00:05:39.193","source":"Server","level":"ERROR","message":"⨯ ReferenceError: modalOpen is not defined"}
-{"timestamp":"00:05:39.200","source":"Server","level":"LOG","message":"✓ Compiled in 17ms"}
-{"timestamp":"00:05:39.245","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:05:39.430","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: modalOpen is not defined"}
-{"timestamp":"00:05:43.668","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
-{"timestamp":"00:05:43.710","source":"Server","level":"LOG","message":"✓ Compiled in 15ms"}
-{"timestamp":"00:05:43.764","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:05:53.770","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:08:37.418","source":"Server","level":"LOG","message":"✓ Compiled in 16ms"}
-{"timestamp":"00:08:43.595","source":"Server","level":"LOG","message":"✓ Compiled in 12ms"}
-{"timestamp":"00:08:49.566","source":"Server","level":"LOG","message":"✓ Compiled in 12ms"}
-{"timestamp":"00:08:55.137","source":"Server","level":"LOG","message":"✓ Compiled in 12ms"}
-{"timestamp":"00:09:05.896","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:09:05.960","source":"Browser","level":"WARN","message":"Image with src \"/images/Falcon501.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
-{"timestamp":"00:09:05.973","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/Falcon501.jpg\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
-{"timestamp":"00:09:05.974","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/Falcon501.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\u001b[39m"}
-{"timestamp":"00:09:09.706","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/L602.jpg\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
-{"timestamp":"00:09:09.706","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/L602.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\u001b[39m"}
-{"timestamp":"00:09:09.707","source":"Browser","level":"WARN","message":"Image with src \"/images/L602.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
-{"timestamp":"00:10:14.442","source":"Server","level":"LOG","message":"✓ Compiled in 21ms"}
-{"timestamp":"00:10:20.020","source":"Server","level":"LOG","message":"✓ Compiled in 14ms"}
-{"timestamp":"00:10:32.413","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:11:21.481","source":"Server","level":"LOG","message":"✓ Compiled in 13ms"}
+{"timestamp":"00:00:00.641","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:05.609","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:02:09.862","source":"Server","level":"LOG","message":"✓ Compiled in 38ms"}
+{"timestamp":"00:02:20.078","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:02:20.175","source":"Browser","level":"WARN","message":"Image with src \"/images/Falcon501.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
+{"timestamp":"00:02:20.177","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/Falcon501.jpg\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
+{"timestamp":"00:02:20.177","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/Falcon501.jpg\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\u001b[39m"}
+{"timestamp":"00:02:21.208","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:03:56.274","source":"Server","level":"LOG","message":"✓ Compiled in 17ms"}
+{"timestamp":"00:04:07.343","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
