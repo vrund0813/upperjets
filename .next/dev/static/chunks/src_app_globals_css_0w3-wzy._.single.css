@@ -969,6 +969,23 @@ body {
   outline: 1.5px solid #9cb406;
 }
 
+section {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 56px 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 48px 16px !important;
+  }
+}
+
 .charter-grid {
   grid-template-columns: 1fr 1.1fr;
   align-items: center;

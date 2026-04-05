@@ -233,6 +233,31 @@ body {
   outline-offset: 2px;
 }
 
+/* ─── Global Section Padding ─────────────────────
+   All sections use inline padding: 72px 40px.
+   These rules override that at smaller breakpoints.
+   ─────────────────────────────────────────────── */
+section {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+@media (max-width: 768px) {
+  section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+}
+@media (max-width: 480px) {
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
 /* ─── Responsive Layout Utilities ───────────────── */
 
 /* Charter: 2-col → 1-col at md */
