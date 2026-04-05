@@ -1,0 +1,566 @@
+/* [project]/src/components/animations/LandingAnimation.module.css [app-client] (css) */
+.LandingAnimation-module__iTq1Bq__animationBox {
+  background: linear-gradient(#0e0e0c 0%, #131311 62%, #0c0c0a 100%);
+  width: 100%;
+  height: 520px;
+  position: relative;
+  overflow: hidden;
+}
+
+.LandingAnimation-module__iTq1Bq__animationBox:after {
+  content: "";
+  z-index: 25;
+  pointer-events: none;
+  background: linear-gradient(#141410 0%, #0000 100%);
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__animationBox:before {
+  content: "";
+  opacity: .6;
+  pointer-events: none;
+  z-index: 30;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  position: absolute;
+  inset: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__tarmac {
+  z-index: 1;
+  background: #0b0b09;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__runwayLine {
+  z-index: 2;
+  background: linear-gradient(90deg, #0000 0%, #f5f5f012 5% 95%, #0000 100%);
+  height: 1px;
+  position: absolute;
+  top: 70%;
+  left: 0;
+  right: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__runwayCenterline {
+  z-index: 2;
+  background: repeating-linear-gradient(90deg, #f5f5f00f 0 28px, #0000 28px 60px);
+  height: 1px;
+  position: absolute;
+  top: calc(70% + 12px);
+  left: 0;
+  right: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__horizonGlow {
+  z-index: 2;
+  background: linear-gradient(#0000 0%, #b9c94305 50%, #0000 100%);
+  height: 36px;
+  position: absolute;
+  top: calc(70% - 18px);
+  left: 0;
+  right: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__buildings {
+  z-index: 3;
+  pointer-events: none;
+  width: 46%;
+  height: 210px;
+  position: absolute;
+  bottom: 30%;
+  right: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__bgPlane1 {
+  z-index: 4;
+  opacity: .18;
+  pointer-events: none;
+  position: absolute;
+  bottom: 30%;
+  right: 30%;
+}
+
+.LandingAnimation-module__iTq1Bq__bgPlane2 {
+  z-index: 4;
+  opacity: .13;
+  pointer-events: none;
+  position: absolute;
+  bottom: 30%;
+  right: 23%;
+}
+
+.LandingAnimation-module__iTq1Bq__jetWrapper {
+  opacity: 0;
+  z-index: 6;
+  animation: 12s linear infinite LandingAnimation-module__iTq1Bq__jetCycle;
+  position: absolute;
+}
+
+@keyframes LandingAnimation-module__iTq1Bq__jetCycle {
+  0% {
+    opacity: 0;
+    animation-timing-function: linear;
+    top: 5%;
+    right: -12%;
+    transform: rotate(-6deg)scale(.28);
+  }
+
+  5% {
+    opacity: .5;
+    animation-timing-function: linear;
+    top: 5%;
+    right: -12%;
+    transform: rotate(-6deg)scale(.28);
+  }
+
+  20% {
+    opacity: .72;
+    animation-timing-function: linear;
+    top: 16%;
+    right: 0%;
+    transform: rotate(-4.5deg)scale(.48);
+  }
+
+  30% {
+    opacity: .86;
+    animation-timing-function: linear;
+    top: 28%;
+    right: 4%;
+    transform: rotate(-3deg)scale(.66);
+  }
+
+  38% {
+    opacity: .96;
+    animation-timing-function: cubic-bezier(.25, 0, .5, 1);
+    top: 43%;
+    right: 8%;
+    transform: rotate(-1deg)scale(.88);
+  }
+
+  43% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+    top: 55%;
+    right: 10%;
+    transform: rotate(.3deg)scale(1);
+  }
+
+  46% {
+    opacity: 1;
+    animation-timing-function: linear;
+    top: 54%;
+    right: 10%;
+    transform: rotate(0)scale(1);
+  }
+
+  62% {
+    opacity: 1;
+    animation-timing-function: linear;
+    top: 54%;
+    right: 10%;
+    transform: rotate(0)scale(1);
+  }
+
+  67% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(.4, 0, 1, 1);
+    top: 54%;
+    right: 12%;
+    transform: rotate(0)scale(1);
+  }
+
+  73% {
+    opacity: 1;
+    animation-timing-function: linear;
+    top: 54%;
+    right: 18%;
+    transform: rotate(0)scale(.98);
+  }
+
+  76% {
+    opacity: 1;
+    animation-timing-function: linear;
+    top: 51%;
+    right: 24%;
+    transform: rotate(5deg)scale(.94);
+  }
+
+  82% {
+    opacity: 1;
+    animation-timing-function: linear;
+    top: 32%;
+    right: 40%;
+    transform: rotate(8deg)scale(.76);
+  }
+
+  88% {
+    opacity: .6;
+    animation-timing-function: ease-in;
+    top: 12%;
+    right: 56%;
+    transform: rotate(5deg)scale(.52);
+  }
+
+  93% {
+    opacity: 0;
+    animation-timing-function: linear;
+    top: 4%;
+    right: 68%;
+    transform: rotate(3deg)scale(.38);
+  }
+
+  100% {
+    opacity: 0;
+    top: 5%;
+    right: -12%;
+    transform: rotate(-6deg)scale(.28);
+  }
+}
+
+.LandingAnimation-module__iTq1Bq__jetSvg {
+  filter: drop-shadow(0 8px 32px #000c);
+  width: 280px;
+  height: 120px;
+  transform: scaleX(-1);
+}
+
+.LandingAnimation-module__iTq1Bq__engineGlow {
+  filter: blur(2px);
+  opacity: 0;
+  background: linear-gradient(270deg, #0000, #b9c94324);
+  border-radius: 4px;
+  height: 4px;
+  animation: 12s linear infinite LandingAnimation-module__iTq1Bq__engineFadeCycle, .35s ease-in-out infinite alternate LandingAnimation-module__iTq1Bq__enginePulseCycle;
+  position: absolute;
+  top: 34%;
+  right: -14px;
+}
+
+.LandingAnimation-module__iTq1Bq__engineGlow2 {
+  filter: blur(2px);
+  opacity: 0;
+  background: linear-gradient(270deg, #0000, #b9c9431c);
+  border-radius: 4px;
+  height: 4px;
+  animation: 12s linear infinite LandingAnimation-module__iTq1Bq__engineFadeCycle, .35s ease-in-out .18s infinite alternate LandingAnimation-module__iTq1Bq__enginePulseCycle;
+  position: absolute;
+  top: 66%;
+  right: -14px;
+}
+
+@keyframes LandingAnimation-module__iTq1Bq__engineFadeCycle {
+  0%, 4% {
+    opacity: 0;
+  }
+
+  6% {
+    opacity: 1;
+  }
+
+  62% {
+    opacity: 1;
+  }
+
+  88% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes LandingAnimation-module__iTq1Bq__enginePulseCycle {
+  0% {
+    width: 14px;
+  }
+
+  100% {
+    width: 28px;
+  }
+}
+
+.LandingAnimation-module__iTq1Bq__carWrapper {
+  opacity: 0;
+  z-index: 5;
+  animation: 12s linear infinite LandingAnimation-module__iTq1Bq__carCycle;
+  position: absolute;
+}
+
+@keyframes LandingAnimation-module__iTq1Bq__carCycle {
+  0% {
+    opacity: 0;
+    animation-timing-function: linear;
+    top: 64%;
+    left: -14%;
+  }
+
+  5% {
+    opacity: .8;
+    animation-timing-function: linear;
+    top: 64%;
+    left: -10%;
+  }
+
+  22% {
+    opacity: .9;
+    animation-timing-function: linear;
+    top: 64%;
+    left: 0%;
+  }
+
+  33% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(.25, 0, .5, 1);
+    top: 64%;
+    left: 5%;
+  }
+
+  37% {
+    opacity: 1;
+    animation-timing-function: linear;
+    top: 64%;
+    left: 8%;
+  }
+
+  62% {
+    opacity: 1;
+    animation-timing-function: linear;
+    top: 64%;
+    left: 8%;
+  }
+
+  67% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0, 0, .5, 1);
+    top: 64%;
+    left: 8%;
+  }
+
+  77% {
+    opacity: .9;
+    animation-timing-function: linear;
+    top: 64%;
+    left: 36%;
+  }
+
+  87% {
+    opacity: .5;
+    animation-timing-function: linear;
+    top: 64%;
+    left: 70%;
+  }
+
+  93% {
+    opacity: 0;
+    animation-timing-function: linear;
+    top: 64%;
+    left: 110%;
+  }
+
+  100% {
+    opacity: 0;
+    top: 64%;
+    left: -14%;
+  }
+}
+
+.LandingAnimation-module__iTq1Bq__carSvg {
+  filter: drop-shadow(0 3px 12px #000000b3);
+  width: 100px;
+  height: 41px;
+}
+
+.LandingAnimation-module__iTq1Bq__touchdownFlare {
+  opacity: 0;
+  z-index: 8;
+  background: #b9c943;
+  width: 0;
+  height: 1px;
+  animation: 12s linear infinite LandingAnimation-module__iTq1Bq__flareCycle;
+  position: absolute;
+  top: 70%;
+  left: 75%;
+  transform: translateX(-50%);
+}
+
+@keyframes LandingAnimation-module__iTq1Bq__flareCycle {
+  0%, 41% {
+    opacity: 0;
+    width: 0;
+    box-shadow: none;
+  }
+
+  44% {
+    opacity: .7;
+    width: 90px;
+    box-shadow: 0 0 28px #b9c94366;
+  }
+
+  49%, 100% {
+    opacity: 0;
+    width: 160px;
+    box-shadow: 0 0 #0000;
+  }
+}
+
+.LandingAnimation-module__iTq1Bq__altitudeTicks {
+  z-index: 9;
+  flex-direction: column;
+  gap: 16px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 28px;
+  transform: translateY(-50%);
+}
+
+.LandingAnimation-module__iTq1Bq__tick {
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.LandingAnimation-module__iTq1Bq__tickLine {
+  opacity: .15;
+  background: #f5f5f0;
+  width: 12px;
+  height: 1px;
+  animation: 12s linear infinite LandingAnimation-module__iTq1Bq__tickLineReveal;
+}
+
+.LandingAnimation-module__iTq1Bq__tickLabel {
+  color: #f5f5f0;
+  letter-spacing: 1px;
+  opacity: .15;
+  font-family: Courier New, monospace;
+  font-size: 8px;
+  font-weight: 300;
+  animation: 12s linear infinite LandingAnimation-module__iTq1Bq__tickLabelReveal;
+}
+
+@keyframes LandingAnimation-module__iTq1Bq__tickLineReveal {
+  0%, 6% {
+    opacity: .15;
+    background: #f5f5f0;
+  }
+
+  12% {
+    opacity: .65;
+    background: #b9c943;
+  }
+
+  62% {
+    opacity: .65;
+    background: #b9c943;
+  }
+
+  70%, 100% {
+    opacity: .15;
+    background: #f5f5f0;
+  }
+}
+
+@keyframes LandingAnimation-module__iTq1Bq__tickLabelReveal {
+  0%, 6% {
+    opacity: .15;
+    color: #f5f5f0;
+  }
+
+  12% {
+    opacity: .65;
+    color: #b9c943;
+  }
+
+  62% {
+    opacity: .65;
+    color: #b9c943;
+  }
+
+  70%, 100% {
+    opacity: .15;
+    color: #f5f5f0;
+  }
+}
+
+.LandingAnimation-module__iTq1Bq__tick:first-child .LandingAnimation-module__iTq1Bq__tickLine, .LandingAnimation-module__iTq1Bq__tick:first-child .LandingAnimation-module__iTq1Bq__tickLabel {
+  animation-delay: -2s;
+}
+
+.LandingAnimation-module__iTq1Bq__tick:nth-child(2) .LandingAnimation-module__iTq1Bq__tickLine, .LandingAnimation-module__iTq1Bq__tick:nth-child(2) .LandingAnimation-module__iTq1Bq__tickLabel {
+  animation-delay: -1.5s;
+}
+
+.LandingAnimation-module__iTq1Bq__tick:nth-child(3) .LandingAnimation-module__iTq1Bq__tickLine, .LandingAnimation-module__iTq1Bq__tick:nth-child(3) .LandingAnimation-module__iTq1Bq__tickLabel {
+  animation-delay: -1s;
+}
+
+.LandingAnimation-module__iTq1Bq__tick:nth-child(4) .LandingAnimation-module__iTq1Bq__tickLine, .LandingAnimation-module__iTq1Bq__tick:nth-child(4) .LandingAnimation-module__iTq1Bq__tickLabel {
+  animation-delay: -.5s;
+}
+
+.LandingAnimation-module__iTq1Bq__tick:nth-child(5) .LandingAnimation-module__iTq1Bq__tickLine, .LandingAnimation-module__iTq1Bq__tick:nth-child(5) .LandingAnimation-module__iTq1Bq__tickLabel {
+  animation-delay: 0s;
+}
+
+.LandingAnimation-module__iTq1Bq__corner {
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.LandingAnimation-module__iTq1Bq__corner:before, .LandingAnimation-module__iTq1Bq__corner:after {
+  content: "";
+  opacity: .2;
+  background: #b9c943;
+  position: absolute;
+}
+
+.LandingAnimation-module__iTq1Bq__cornerTL {
+  top: 0;
+  left: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__cornerTL:before {
+  width: 20px;
+  height: 1px;
+  top: 0;
+  left: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__cornerTL:after {
+  width: 1px;
+  height: 20px;
+  top: 0;
+  left: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__cornerBR {
+  bottom: 0;
+  right: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__cornerBR:before {
+  width: 20px;
+  height: 1px;
+  bottom: 0;
+  right: 0;
+}
+
+.LandingAnimation-module__iTq1Bq__cornerBR:after {
+  width: 1px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+}
+
+/*# sourceMappingURL=src_components_animations_LandingAnimation_module_041e.9~.css.map*/

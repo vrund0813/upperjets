@@ -1,0 +1,334 @@
+/* ─── Container ──────────────────────────────────────────
+   Full-width strip, fixed height. Sits below charter text.
+   ─────────────────────────────────────────────────────── */
+.animationBox {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: linear-gradient(180deg, #0e0e0c 0%, #131311 62%, #0c0c0a 100%);
+  overflow: hidden;
+}
+
+/* Top fade — blends animation into section background */
+.animationBox::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, #141410 0%, transparent 100%);
+  z-index: 25;
+  pointer-events: none;
+}
+
+/* Grain overlay */
+.animationBox::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 30;
+}
+
+/* ─── Tarmac & runway ────────────────────────────────── */
+/* tarmac at bottom 30% → runway line sits at 70% from top */
+.tarmac {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: #0b0b09;
+  z-index: 1;
+}
+
+.runwayLine {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245,245,240,0.07) 5%,
+    rgba(245,245,240,0.07) 95%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+.runwayCenterline {
+  position: absolute;
+  top: calc(70% + 12px);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(245,245,240,0.06) 0px, rgba(245,245,240,0.06) 28px,
+    transparent 28px, transparent 60px
+  );
+  z-index: 2;
+}
+
+/* Subtle horizon atmosphere glow */
+.horizonGlow {
+  position: absolute;
+  top: calc(70% - 18px);
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(185,201,67,0.018) 50%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+/* ─── Airport infrastructure (static background) ──────
+   Positioned at bottom: 30% so SVG bottom sits on the
+   runway line. The SVG extends upward into the sky.
+   ─────────────────────────────────────────────────── */
+.buildings {
+  position: absolute;
+  bottom: 30%;
+  right: 0;
+  width: 46%;
+  height: 210px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ─── Background parked aircraft ─────────────────────── */
+.bgPlane1 {
+  position: absolute;
+  bottom: 30%;
+  right: 30%;
+  z-index: 4;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.bgPlane2 {
+  position: absolute;
+  bottom: 30%;
+  right: 23%;
+  z-index: 4;
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+/* ─── Main Jet — 12s cycle ───────────────────────────
+   SVG is scaleX(-1) so nose faces LEFT throughout.
+   Approach from upper-right → land → hold → take off upper-left.
+
+   Box is now 100vw-ish × 520px.
+   Runway at top 70% = 364px (520 × 0.70).
+   Land: top 45%, right 20% → visual bottom ≈ 364px. ✓
+   ─────────────────────────────────────────────────── */
+.jetWrapper {
+  position: absolute;
+  opacity: 0;
+  z-index: 6;
+  animation: jetCycle 12s linear infinite;
+}
+
+@keyframes jetCycle {
+  /* invisible reset — far upper-right */
+  0%   { top: 5%;  right: -12%; transform: rotate(-6deg)   scale(0.28); opacity: 0;    animation-timing-function: linear; }
+  /* fade in, cruise altitude */
+  5%   { top: 5%;  right: -12%; transform: rotate(-6deg)   scale(0.28); opacity: 0.5;  animation-timing-function: linear; }
+  /* steady descent */
+  20%  { top: 16%; right:  0%;  transform: rotate(-4.5deg) scale(0.48); opacity: 0.72; animation-timing-function: linear; }
+  30%  { top: 28%; right:  4%;  transform: rotate(-3deg)   scale(0.66); opacity: 0.86; animation-timing-function: linear; }
+  /* final approach — decelerate into flare */
+  38%  { top: 43%; right:  8%;  transform: rotate(-1deg)   scale(0.88); opacity: 0.96; animation-timing-function: cubic-bezier(0.25, 0, 0.5, 1); }
+  /* touchdown — slight nose-up flare */
+  43%  { top: 55%; right: 10%;  transform: rotate(0.3deg)  scale(1.00); opacity: 1;    animation-timing-function: ease-out; }
+  /* settle level on runway */
+  46%  { top: 54%; right: 10%;  transform: rotate(0deg)    scale(1.00); opacity: 1;    animation-timing-function: linear; }
+  /* hold — client boarding */
+  62%  { top: 54%; right: 10%;  transform: rotate(0deg)    scale(1.00); opacity: 1;    animation-timing-function: linear; }
+  /* takeoff roll — leftward (right% increases) */
+  67%  { top: 54%; right: 12%;  transform: rotate(0deg)    scale(1.00); opacity: 1;    animation-timing-function: cubic-bezier(0.4, 0, 1, 1); }
+  73%  { top: 54%; right: 18%;  transform: rotate(0deg)    scale(0.98); opacity: 1;    animation-timing-function: linear; }
+  /* liftoff — nose up */
+  76%  { top: 51%; right: 24%;  transform: rotate(5deg)    scale(0.94); opacity: 1;    animation-timing-function: linear; }
+  /* climb */
+  82%  { top: 32%; right: 40%;  transform: rotate(8deg)    scale(0.76); opacity: 1;    animation-timing-function: linear; }
+  /* upper altitude */
+  88%  { top: 12%; right: 56%;  transform: rotate(5deg)    scale(0.52); opacity: 0.6;  animation-timing-function: ease-in; }
+  /* fade out — exits upper-left */
+  93%  { top:  4%; right: 68%;  transform: rotate(3deg)    scale(0.38); opacity: 0;    animation-timing-function: linear; }
+  /* reset */
+  100% { top: 5%;  right: -12%; transform: rotate(-6deg)   scale(0.28); opacity: 0;    }
+}
+
+.jetSvg {
+  width: 280px;
+  height: 120px;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.8));
+  transform: scaleX(-1);
+}
+
+/* ─── Engine glow ────────────────────────────────────── */
+.engineGlow {
+  position: absolute;
+  top: 34%;
+  right: -14px;
+  height: 4px;
+  background: linear-gradient(270deg, transparent, rgba(185,201,67,0.14));
+  border-radius: 4px;
+  filter: blur(2px);
+  opacity: 0;
+  animation: engineFadeCycle 12s linear infinite,
+             enginePulseCycle 0.35s ease-in-out infinite alternate;
+}
+.engineGlow2 {
+  position: absolute;
+  top: 66%;
+  right: -14px;
+  height: 4px;
+  background: linear-gradient(270deg, transparent, rgba(185,201,67,0.11));
+  border-radius: 4px;
+  filter: blur(2px);
+  opacity: 0;
+  animation: engineFadeCycle 12s linear infinite,
+             enginePulseCycle 0.35s ease-in-out infinite alternate;
+  animation-delay: 0s, 0.18s;
+}
+
+@keyframes engineFadeCycle {
+  0%, 4%  { opacity: 0; }
+  6%      { opacity: 1; }
+  62%     { opacity: 1; }
+  88%     { opacity: 0; }
+  100%    { opacity: 0; }
+}
+@keyframes enginePulseCycle {
+  0%   { width: 14px; }
+  100% { width: 28px; }
+}
+
+/* ─── Car — 12s cycle ─────────────────────────────────
+   Enters left, stops near plane's landing zone,
+   then drives right and exits. Always faces right.
+
+   Stop: top 52%, left 35% → visual bottom ≈ 364px. ✓
+   ─────────────────────────────────────────────────── */
+.carWrapper {
+  position: absolute;
+  opacity: 0;
+  z-index: 5;
+  animation: carCycle 12s linear infinite;
+}
+
+@keyframes carCycle {
+  /* reset */
+  0%   { top: 64%; left: -14%; opacity: 0;   animation-timing-function: linear; }
+  /* fade in, drive right */
+  5%   { top: 64%; left: -10%; opacity: 0.8; animation-timing-function: linear; }
+  22%  { top: 64%; left:   0%; opacity: 0.9; animation-timing-function: linear; }
+  /* slow to stop */
+  33%  { top: 64%; left:   5%; opacity: 1;   animation-timing-function: cubic-bezier(0.25, 0, 0.5, 1); }
+  /* stopped */
+  37%  { top: 64%; left:   8%; opacity: 1;   animation-timing-function: linear; }
+  /* hold */
+  62%  { top: 64%; left:   8%; opacity: 1;   animation-timing-function: linear; }
+  /* depart right */
+  67%  { top: 64%; left:   8%; opacity: 1;   animation-timing-function: cubic-bezier(0, 0, 0.5, 1); }
+  77%  { top: 64%; left:  36%; opacity: 0.9; animation-timing-function: linear; }
+  87%  { top: 64%; left:  70%; opacity: 0.5; animation-timing-function: linear; }
+  /* off-screen right */
+  93%  { top: 64%; left: 110%; opacity: 0;   animation-timing-function: linear; }
+  /* reset */
+  100% { top: 64%; left: -14%; opacity: 0;   }
+}
+
+.carSvg {
+  width: 100px;
+  height: 41px;
+  filter: drop-shadow(0 3px 12px rgba(0,0,0,0.7));
+}
+
+/* ─── Touchdown flare ────────────────────────────────── */
+/* Fires at plane's landing zone: approx left 75%, tarmac line */
+.touchdownFlare {
+  position: absolute;
+  top: 70%;
+  left: 75%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: #b9c943;
+  opacity: 0;
+  z-index: 8;
+  animation: flareCycle 12s linear infinite;
+}
+@keyframes flareCycle {
+  0%, 41%   { width: 0;     opacity: 0;   box-shadow: none; }
+  44%       { width: 90px;  opacity: 0.7; box-shadow: 0 0 28px rgba(185,201,67,0.4); }
+  49%, 100% { width: 160px; opacity: 0;   box-shadow: 0 0 0px transparent; }
+}
+
+/* ─── Altitude ticks — left side ─────────────────────── */
+.altitudeTicks {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 9;
+}
+.tick { display: flex; align-items: center; gap: 8px; }
+.tickLine {
+  width: 12px;
+  height: 1px;
+  background: #f5f5f0;
+  opacity: 0.15;
+  animation: tickLineReveal 12s linear infinite;
+}
+.tickLabel {
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  font-weight: 300;
+  color: #f5f5f0;
+  letter-spacing: 1px;
+  opacity: 0.15;
+  animation: tickLabelReveal 12s linear infinite;
+}
+@keyframes tickLineReveal {
+  0%, 6%   { opacity: 0.15; background: #f5f5f0; }
+  12%      { opacity: 0.65; background: #b9c943; }
+  62%      { opacity: 0.65; background: #b9c943; }
+  70%,100% { opacity: 0.15; background: #f5f5f0; }
+}
+@keyframes tickLabelReveal {
+  0%, 6%   { opacity: 0.15; color: #f5f5f0; }
+  12%      { opacity: 0.65; color: #b9c943; }
+  62%      { opacity: 0.65; color: #b9c943; }
+  70%,100% { opacity: 0.15; color: #f5f5f0; }
+}
+.tick:nth-child(1) .tickLine, .tick:nth-child(1) .tickLabel { animation-delay: -2.0s; }
+.tick:nth-child(2) .tickLine, .tick:nth-child(2) .tickLabel { animation-delay: -1.5s; }
+.tick:nth-child(3) .tickLine, .tick:nth-child(3) .tickLabel { animation-delay: -1.0s; }
+.tick:nth-child(4) .tickLine, .tick:nth-child(4) .tickLabel { animation-delay: -0.5s; }
+.tick:nth-child(5) .tickLine, .tick:nth-child(5) .tickLabel { animation-delay:  0s;   }
+
+/* ─── Corner accents ─────────────────────────────────── */
+.corner { position: absolute; width: 20px; height: 20px; z-index: 10; }
+.corner::before, .corner::after { content: ''; position: absolute; background: #b9c943; opacity: 0.2; }
+.cornerTL { top: 0; left: 0; }
+.cornerTL::before { top: 0; left: 0; width: 20px; height: 1px; }
+.cornerTL::after  { top: 0; left: 0; width: 1px;  height: 20px; }
+.cornerBR { bottom: 0; right: 0; }
+.cornerBR::before { bottom: 0; right: 0; width: 20px; height: 1px; }
+.cornerBR::after  { bottom: 0; right: 0; width: 1px;  height: 20px; }

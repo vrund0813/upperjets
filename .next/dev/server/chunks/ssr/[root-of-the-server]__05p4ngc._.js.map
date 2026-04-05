@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///Users/vrundpatel/Documents/Project/UpperJets/upperjets/src/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,0IAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///Users/vrundpatel/Documents/Project/UpperJets/upperjets/src/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return (\n    <main>\n      <div className=\"min-h-screen bg-brand-bg flex items-center justify-center\">\n        <div className=\"text-center\">\n          <h1 className=\"font-playfair text-4xl text-brand-cream mb-4\">\n            Upper Jets\n          </h1>\n          <p className=\"font-inter text-brand-warm\">\n            Private Aviation Charter · Phase 1 Foundation\n          </p>\n          <p className=\"font-cormorant italic text-brand-green text-2xl mt-4\">\n            higher.\n          </p>\n        </div>\n      </div>\n    </main>\n  )\n}\n"],"names":["Home","className"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC;YAAIC,WAAU;sBACb,cAAA,8OAAC;gBAAIA,WAAU;;kCACb,8OAAC;wBAAGA,WAAU;kCAA+C;;;;;;kCAG7D,8OAAC;wBAAEA,WAAU;kCAA6B;;;;;;kCAG1C,8OAAC;wBAAEA,WAAU;kCAAuD;;;;;;;;;;;;;;;;;;;;;;AAO9E"}}]
+}
